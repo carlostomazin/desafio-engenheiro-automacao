@@ -1,12 +1,9 @@
 const express = require('express')
 const router = express.Router()
-
+const mysql = require("../src/mysql").pool
 var bcrypt = require('bcryptjs');
 
-
-const mysql = require("../src/mysql").pool
-
-router.post('/login', (req, res) => {
+router.post('/', (req, res) => {
     //console.log(req.body)
 
     const {nome, senha} = req.body;
@@ -27,17 +24,18 @@ router.post('/login', (req, res) => {
             }
 
             if (resultado.length > 0 && fun_bcrypt()){
-                res.status(201).redirect('/portal/services')   
+                res.status(201).redirect('./portal/services')   
+                cont = 1
             }else{
                 res.render('./portal/login', {
                     message: "usuário e/ou senha inválidos"
                 })
+                cont = 0
             }
             
             conn.release()
         })
     })
-
 })
 
 module.exports = router

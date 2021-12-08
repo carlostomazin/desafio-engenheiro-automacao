@@ -1,8 +1,9 @@
 const express = require('express')
 const app = express()
 const handlebars = require('express-handlebars')
+//const node_ssh = require('node-ssh');
+//const ssh = new node_ssh();
 
-// -- Configurações -- //
 // Conexão Mysql
 //const mysql = require("./mysql").pool;
 // Body Parser
@@ -24,7 +25,7 @@ app.set('view engine', 'handlebars');
 
 
 // Rotas
-app.use("/portal", require ('../routes/usuarios'))
+app.use("/portal", require ('../routes/portal'))
 app.use("/auth", require ('../routes/auth'))
 app.use("/", require ('../routes/home'))
 
