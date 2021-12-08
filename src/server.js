@@ -1,10 +1,6 @@
 const express = require('express')
 const app = express()
 const handlebars = require('express-handlebars')
-const path = require("path")
-const passport = require('passport')
-const session = require('express-session')
-require('../config/auth')(passport)
 
 // -- Configurações -- //
 // Conexão Mysql
@@ -26,10 +22,6 @@ var hbs = handlebars.create({
 app.engine('handlebars', hbs.engine)
 app.set('view engine', 'handlebars');
 
-// Public
-app.use(express.static(path.join(__dirname, "public")))
-
-// Autentição
 
 // Rotas
 app.use("/portal", require ('../routes/usuarios'))
