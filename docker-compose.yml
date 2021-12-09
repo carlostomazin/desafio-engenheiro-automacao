@@ -22,11 +22,3 @@ services:
     environment:
       MARIADB_ROOT_PASSWORD: 'root'
     restart: always
-  
-  linux:
-    container_name: linux
-    build: ./build_linux
-    ports:
-      - 2222:22
-    command: bash
-    tty: true
