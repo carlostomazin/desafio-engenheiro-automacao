@@ -25,6 +25,7 @@ app.set('view engine', 'handlebars');
 
 
 // Rotas
+app.use("/servidor", require ('../routes/servidor'))
 app.use("/portal", require ('../routes/portal'))
 app.use("/auth", require ('../routes/auth'))
 app.use("/", require ('../routes/home'))

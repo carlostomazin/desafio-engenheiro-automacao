@@ -8,8 +8,8 @@
     "express": "^4.16.4",
     "express-handlebars": "^6.0.2",
     "mysql": "^2.17.1",
-    "node-ssh": "^12.0.2",
-    "nodemon": "^2.0.13"
+    "nodemon": "^2.0.13",
+    "simple-ssh": "^1.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
